@@ -15,10 +15,12 @@
     "mochawesome-report-generator": "^5.1.0"
   },
   "scripts": {
-    "run:headless": "npx cypress run",
+    "delete:all": "rm -rf mochawesome.json & rm -rf node_modules & rm -rf ./cypress/results & rm -rf ./cypress/screenshots & rm -rf ./cypress/videos & rm -rf mochawesome-report ",
+    "run:headless": "npm install & npx cypress run",
     "delete:reports": "rm -r cypress/results/* || true",
     "prereport": "npm run delete:reports",
     "merge:mocha:reports": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json",
-    "generate:test:report": "npx marge mochawesome.json"
+    "generate:test:report": "npx marge mochawesome.json",
+    "generate:reports": "yarn run merge:mocha:reports & yarn run generate:test:report"
   }
 }
