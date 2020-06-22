@@ -1,10 +1,9 @@
 {
-  "reporter": "mochawesome",
-  "reporterOptions": {
+  "reporterEnabled": "mochawesome",
+  "mochawesomeReporterOptions": {
     "reportDir": "cypress/results/mochawesome",
     "overwrite": false,
     "html": false,
     "json": true
-  },
-  "projectId": "nzk76o"
+  }
 }
